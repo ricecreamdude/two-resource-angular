@@ -2,8 +2,8 @@ const angular = require('angular');
 const router = require('angular-ui-router');
 
 // // Special stuff I am learning
-var toDoApp = angular
-  .module('toDoApp' , ['ui.router'])
+var friendsApp = angular
+  .module('friendsApp' , ['ui.router'])
   .config(['$urlRouterProvider' , '$stateProvider', function($urlRouterProvider,$stateProvider){
     $urlRouterProvider.otherwise('/');
 
@@ -40,10 +40,3 @@ var toDoApp = angular
         templateUrl: './../templates/about.html'
       })
   }]);
-
-// var toDoApp = angular.module('ToDoApp' , [])
-// .controller(
-//
-// );
-//Use set interval to have this run continuously, so updates occur
-//on main JS file.
