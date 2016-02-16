@@ -1,9 +1,9 @@
 <h1>{{title}}</h1>
 
 <ul>
-  <li ng-repeat="friend in friends">
-    <input type="text" ng-mode"friend.name">
-    <input type="text" ng-mode"friend.age">
+  <li ng-repeat="person in friends">
+    <input type="text" ng-model="person.name">
+    <input type="text" ng-model="person.age">
     <button ng-click="delete()" class="btn btn-danger"></button>
   </li>
 </ul>

@@ -17,15 +17,14 @@ profileRouter.route('/friend')
     Friend.find( {} , (err ,data) => {
       if(err) return dbError(err , res);
       data.msg = 'Sent a list of your friends.';
-      console.log("FRIEND GET");              //TEST
-      res.status(500).json(data);
+      res.status(200).json(data);
     });
   })
   .post( bodyParser , (req, res) => {
     var newFriend = new Friend(req.body);
     newFriend.save( (err , data) => {
       if(err) return dbError(err , res);
-      res.status(500).json( {'msg':'Added a new friend to your list. Oh boy!'} );
+      res.status(200).json( {'msg':'Added a new friend to your list. Oh boy!'} );
     });
   })
   .put( bodyParser , (req, res) => {
@@ -33,13 +32,13 @@ profileRouter.route('/friend')
     delete friendData._id;
     Friend.update({_id: friendData._id} , friendData , (err, data) => {
       if(err) return dbError(err , res);
-      res.status(500).json({'msg':'Updated your friend.'});
+      res.status(200).json({'msg':'Updated your friend.'});
     });
   })
   .delete( bodyParser , (req, res) => {
     var friendData = req.body;
     Friend.remove({_id: friendData._id} , (err) => {
       if(err) return dbError(err , res);
-      res.status(500).json({'msg':'Updated your friend.'});
+      res.status(200).json({'msg':'Updated your friend.'});
     });
   })

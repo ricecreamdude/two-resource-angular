@@ -17,22 +17,22 @@ var friendsApp = angular
           $scope.items = ['home' , 'about' , 'contact'];
 
           $scope.save = function(){
-            $http.post('/api/friends' , friends);
+            $http.post('/api/friend' , friends);
           };
           $scope.delete = function(){
             friends.splice($index,1);
-            $http.post('/api.friends' , friends);
+            $http.post('/api/friend' , friends);
           }
         }],
         //These things must load before other stuff loads
         //Look - an HTTP request c:
         resolve: {
           friends: ['$http' , ($http) => {
-            return $http.get('/api/friends.json').then( (res) => {
+            return $http.get('/api/friend').then( (res) => {
+              console.log(res.data);
               return res.data;
             })
           }]
-
         }
       })
       .state('about' , {
