@@ -1,0 +1,37 @@
+Models DONE
+  Friend DONE
+    name:
+    gender:
+    age:
+    relationship: Best
+
+  Enemy DONE
+    name:
+    gender:
+    age:  25
+    relationship: Nemesis
+
+Routes
+  friendRoutes.js DONE
+    get
+    post
+    put
+    delete
+
+  enemyRoutes.js
+    get
+    post
+    put
+    delete
+
+Display Changes
+
+
+
+Proper use of $scope: 2 pts
+
+Proper use of $http: 2 pts
+
+Proper REST requests: 2 pts
+
+CRUD methods: 4 pts
