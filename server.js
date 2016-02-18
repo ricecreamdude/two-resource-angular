@@ -13,8 +13,6 @@ var PORT = 5000;
 //Adding routes
 app.use('/api' , friendRouter);
 // app.use('/api' , enemyRouter); //To-Be Added
-
-//Init
 app.use(
   express.static( __dirname + '/build')
 ).listen(PORT , () => {

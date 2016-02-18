@@ -5,7 +5,7 @@ const Friend = require( __dirname + '/../models/friend');
 var profileRouter = module.exports = exports = express.Router();
 //We need to use auth.routes to direct users to this route
 
-profileRouter.route('/friend')
+profileRouter.route('/friends')
   .get( (res , req) => {
     Friend.find({} , (err,data) => {
 

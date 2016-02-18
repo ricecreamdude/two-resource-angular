@@ -16,7 +16,13 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest('build/'));
 });
 
+gulp.task('watch' , () => {
+  gulp.watch(__dirname + '/app/js/*.js' , ['webpack:dev']);
+  gulp.watch(__dirname + '/app/*.html' , ['html:dev']);
+  gulp.watch(__dirname + '/app/templates/*.html' , ['html:dev']);
+})
+
 gulp.task('build:dev', ['webpack:dev', 'html:dev']);
-gulp.task('default', ['build:dev']);
+gulp.task('default', ['build:dev','watch']);
 
 //Copied form GitHub - Javascript Week 6
