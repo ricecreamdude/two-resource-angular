@@ -1,6 +1,6 @@
 
 .navi {
-  width: 100%;
+
 }
 
   .navi-title {
@@ -9,8 +9,16 @@
     text-align: center;
   }
 
-  .nav-pills {
+  .navi-btn {
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
+    text-decoration: none;
+    color: blue;
+    border: 1px solid blue;
   }
 
   .navi-body{
