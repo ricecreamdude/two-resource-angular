@@ -28,46 +28,11 @@ var friendsApp = angular
       })
   }]); //End of angular object
 
-
-
-// friendsApp.controller( 'enemyController' , ['$scope','$http',function($scope , $http) {
-//
-//   $scope.title = "List of Enemies in my life".
-//
-//   $scope.getAll = function() {
-//     $http.get('/api/enemies')
-//     .then( (res) => {
-//       $scope.enemies = res.data;
-//       $scope.message = res.msg;
-//     });
-//   }
-//   $scope.post = function(data){
-//     var newEnemy = data;
-//     $http.post('/api/enemies' , newEnemy)
-//     .then( (res) => {
-//       $scope.message = 'New Enemy added :I ';
-//       $scope.enemies.push(res.data);
-//     })
-//   }
-//   $scope.put = function(enemyData){
-//     $http.put('/api/enemies/' + enemyData._id , enemyData)
-//     .then( (res) =>{
-//       $scope.message = res.data.msg;
-//     })
-//   }
-//   $scope.delete = function(person, $index){
-//     $http.delete('/api/enemies/' + person._id).then( (res) => {
-//       $scope.enemies.splice($index,1);
-//       $scope.message = res.data.msg;
-//     })
-//   }
-// }])
-
 friendsApp.controller( 'enemyController' , ['$scope','$http', function ($scope , $http) {
 
   $scope.title = 'List of Enemies in my life';
 
-  $scope.getAll = function() {
+  $scope.getEnemies = function() {
     $http.get('/api/enemies')
     .then( (res) => {
       $scope.enemies = res.data;
@@ -75,7 +40,7 @@ friendsApp.controller( 'enemyController' , ['$scope','$http', function ($scope ,
     });
   }
 
-  $scope.post = function(data){
+  $scope.postEnemy = function(data){
     var newEnemy = data;
     $http.post('/api/enemies' , newEnemy)
     .then( (res) => {
@@ -83,13 +48,13 @@ friendsApp.controller( 'enemyController' , ['$scope','$http', function ($scope ,
       $scope.enemies.push(res.data);
     })
   }
-  $scope.put = function(enemyData){
+  $scope.putEnemy = function(enemyData){
     $http.put('/api/enemies/' + enemyData._id , enemyData)
     .then( (res) =>{
       $scope.message = res.data.msg;
     })
   }
-  $scope.delete = function(person, $index){
+  $scope.deleteEnemy = function(person, $index){
     $http.delete('/api/enemies/' + person._id).then( (res) => {
       $scope.enemies.splice($index,1);
       $scope.message = res.data.msg;

@@ -1,23 +1,43 @@
-.side {
+
+.navi {
   width: 100%;
 }
-  .side-title {
 
+  .navi-title {
+    padding: 0px 0px 10px 0px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .nav-pills {
+    text-align: center;
+  }
+
+  .navi-body{
+    text-align: center;
+    padding:
+  }
+
+.side-div {
+  width: 100%;
+  padding: 0px 0px 70px 0px;
+}
+  .side-title {
+    font-size: 20px;
   }
 
   .side-body {
-
   }
     .side-form {
-
+      padding-bottom: 20px;
     }
       .side-form-input {
-
+        padding-bottom: 5px;
       }
-    .side-buttons-area {
+    .side-btn-area {
 
     }
-      .side-buttons {
+      .side-btn {
 
       }
 

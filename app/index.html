@@ -7,16 +7,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="base/base.css">
     <link rel="stylesheet" type="text/css" href="layout/layout.css" charset="utf-8">
-    <!-- <link rel="styesheet" href="css/modules/modules.css"> -->
-    <!-- <link rel="styesheet" href="css/state/state.css"> -->
+    <link rel="stylesheet" type="text/css" href="modules/modules.css">
+    <!-- <link rel="stylesheet" href="state/state.css"> -->
   </head>
   <main data-ng-app="friendsApp">
     <header id="header" ng-include="'templates/header.html'">
       Header
     </header>
-    <content id="secondary" class="container">
-      <h2>Friend or Enemy?</h2>
-    </content>
+    <content id="secondary" ng-include="'templates/nav.html'"></content>
     <content id="primary">
       <body>
           <div ui-view>
@@ -25,7 +23,7 @@
       </body>
       <!-- App defined here! -->
       </content>
-    <content id="tertiary" class="container">
+    <content id="tertiary" ng-include="'templates/post.html'" class="container">
       <h3>Add Enemy</h3>
     </content>
     <footer id="footer" ng-include="'templates/footer.html'">
