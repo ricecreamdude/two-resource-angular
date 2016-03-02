@@ -1,37 +1,22 @@
-Models DONE
-  Friend DONE
-    name:
-    gender:
-    age:
-    relationship: Best
+To-Do - SMACSS
 
-  Enemy DONE
-    name:
-    gender:
-    age:  25
-    relationship: Nemesis
+base.css
 
-Routes
-  friendRoutes.js DONE
-    get
-    post
-    put
-    delete
+layout.css
 
-  enemyRoutes.js
-    get
-    post
-    put
-    delete
+modules.css
 
-Display Changes
+state.css
+  ????
+
+HTML
+  Add
 
 
+Display all parts of the website at all times?
 
-Proper use of $scope: 2 pts
+  OR
 
-Proper use of $http: 2 pts
+Create 3 panel structure for friend AND enemy
 
-Proper REST requests: 2 pts
-
-CRUD methods: 4 pts
+  > Which is less work?

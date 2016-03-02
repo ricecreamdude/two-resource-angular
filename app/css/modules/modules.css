@@ -1,0 +1,38 @@
+.side {
+  width: 100%;
+}
+  .side-title {
+
+  }
+
+  .side-body {
+
+  }
+    .side-form {
+
+    }
+      .side-form-input {
+
+      }
+    .side-buttons-area {
+
+    }
+      .side-buttons {
+
+      }
+
+<div class='side'>
+  <div class='side-title'></div>
+  <div class='side-body'>
+    <div class='side-form'>
+      <input class='side-form-input'></input>
+    </div>
+    <div class='side-buttons-area'>
+      <button class='side-buttons'></button>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>

@@ -16,13 +16,19 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest('build/'));
 });
 
+gulp.task('css:dev' , () => {
+  gulp.src(__dirname + '/app/css/**/*.css')
+    .pipe(gulp.dest(__dirname + '/build'));
+})
+
 gulp.task('watch' , () => {
   gulp.watch(__dirname + '/app/js/*.js' , ['webpack:dev']);
+  gulp.watch(__dirname + '/app/css/**/*.css' , ['css:dev']);
   gulp.watch(__dirname + '/app/*.html' , ['html:dev']);
   gulp.watch(__dirname + '/app/templates/*.html' , ['html:dev']);
 })
 
-gulp.task('build:dev', ['webpack:dev', 'html:dev']);
+gulp.task('build:dev', ['webpack:dev', 'html:dev' , 'css:dev']);
 gulp.task('default', ['build:dev','watch']);
 
 //Copied form GitHub - Javascript Week 6
