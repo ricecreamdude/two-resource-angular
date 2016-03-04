@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="modules/modules.css">
     <link rel="stylesheet" type="text/css" href="state/state.css">
   </head>
-  <main data-ng-app="friendsApp">
+  <main data-ng-app="friendsApp" data-ng-controller="MainController">
     <header id="header">
       <div class="header-title">
         Two-Resource Angular App
@@ -24,15 +24,20 @@
       </div>
     </content>
     <content id="primary" data-ng-controller="FriendController" data-ng-init="getAll()">
+      {{message}}
       <ul>
-        <friend-display id="primary" data-ng-repeat="person in friends" data-person="person">
-
-
+        <friend-display id="primary" data-ng-repeat="person in friends track by $index">
+          <button ng-click="delete(person , $index)" class="btn btn-danger glyphicon glyphicon-remove"></button>
+          <button ng-click="put(person)" class="btn btn-basic glyphicon glyphicon-pencil"></button>
           <!-- App defined here! -->
         </friend-display>
       </ul>
     </content>
-    <content id="tertiary" ng-include="'templates/post.html'" class="container">
+    <content id="tertiary" class="container" data-ng-controller="FriendController">
+        <friend-post-form>
+          <button ng-click="post(newPerson)" class="btn btn-primary side-btn" type="button" name="button">Add Friend</button>
+        </friend-post-form>
+      <!-- <content data-ng-controller="EnemyController"></content> -->
       <h3>Add Enemy</h3>
     </content>
 

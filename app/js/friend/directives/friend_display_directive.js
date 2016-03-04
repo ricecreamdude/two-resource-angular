@@ -5,11 +5,7 @@ module.exports = function(app) {
       replace: true,
       transclude: true,
       templateUrl: '/templates/friend/directives/friends.html',
-      scope: {
-        person: '='
-      }
+      scope: true
     };
   });
 };
-
-//CHECKED

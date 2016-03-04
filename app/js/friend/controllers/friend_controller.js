@@ -3,8 +3,6 @@
 module.exports = function(app) {
   app.controller('FriendController' , ['$scope' , '$http' , 'cfResource' , function ($scope , $http , Resource) {
     $scope.title = 'List of Friends in my life';
-    $scope.friends = [];
-
     var friendService = Resource('/friends');
     // console.log('Hello from Friend Controller')
     $scope.getAll = function() {
@@ -12,17 +10,17 @@ module.exports = function(app) {
         if (err) return console.log(err);
         $scope.friends = res;
         $scope.message = res.msg;
+        console.log("Friends getAll'd");
         console.log($scope.friends);
       });
     };
 
+//$scope.friends returns [];
     $scope.post = function(person) {
-      console.log(person.age);
-      $scope.friends.push({name: "Jimbo from controller" , age: 8});
-      // $scope.friends.push(person);
+      $scope.friends.push(person);
+      console.log($scope.friends);
       friendService.post(person , function(err , res) {
         if (err) return console.log(err);
-        // $scope.friends.splice($scope.friends.indexOf(person) , 1, res);
         $scope.newPerson = null;
 
       });
@@ -31,7 +29,7 @@ module.exports = function(app) {
     $scope.put = function(friend) {
       friendService.put(friend , function(err , res) {
         if (err) return console.log(err);
-        $scope.message = res.data.msg;
+        $scope.message = "Friend Edited";
       });
     };
 

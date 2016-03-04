@@ -1,6 +1,11 @@
 <li>
   <span>
-    {{person.name}} is {{person.age}} years old
+    <span style="font-size:30px; font-weight:bold;">{{person.name}}, </span>
+    <span style="font-size:22px">{{person.age}} years old</span> <br />
+    <label for="name">Name:</label>
+    <input type="text" name="name" ng-model="person.name"> <br />
+    <label for="age">Age:</label>
+    <input type="text" name="age" ng-model="person.age">
   </span>
-  <!-- <div role="actions" class="actions" data-ng-transclude></div> -->
+  <div role="actions" class="actions" data-ng-transclude></div>
 </li>

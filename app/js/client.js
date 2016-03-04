@@ -2,29 +2,11 @@ const angular = require('angular');
 const router = require('angular-ui-router');
 //Scope properties ONLY inherit down state chains if views are nested
 var friendsApp = angular.module('friendsApp' , [] )
-  // .config(['$urlRouterProvider' , '$stateProvider', function($urlRouterProvider,$stateProvider){
-  //
-  //   $urlRouterProvider.otherwise('/');
-  //
-  //   $stateProvider
-  //
-  //     .state('friends', {
-  //       url: '/friends',
-  //       templateUrl: './../templates/friends.html',
-  //       controller: 'friendController',
-  //       resolve: {}
-  //     })
-  //     // .state('enemies' , {
-  //     //   url: '/enemies' ,
-  //     //   templateUrl: './../templates/enemies.html',
-  //     //   controller: 'enemyController', //end controller
-  //     //   resolve: {}//end resolve
-  //     // })
-  // }]); //End of angular object
 
-
+require('./controllers')(friendsApp);
 require('./services')(friendsApp);
 require('./friend')(friendsApp);
+
 
 // require('./enemy')(friendsApp);
 
