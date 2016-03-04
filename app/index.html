@@ -11,23 +11,39 @@
     <link rel="stylesheet" type="text/css" href="state/state.css">
   </head>
   <main data-ng-app="friendsApp">
-    <header id="header" ng-include="'templates/header.html'">
-      Header
+    <header id="header">
+      <div class="header-title">
+        Two-Resource Angular App
+      </div>
     </header>
-    <content id="secondary" ng-include="'templates/nav.html'"></content>
-    <content id="primary">
-      <body>
-          <div ui-view>
-            <h2>Click on any tab to start the application</h2>
-          </div>
-      </body>
-      <!-- App defined here! -->
-      </content>
+    <content id="secondary" ng-include="'templates/nav.html'">
+      <div class="navi">
+        <h3 class='navi-title'>Select View</h3>
+        <div class='navi-btn' onclick="location.href='#/friends';">Friends</div><br>
+        <div class='navi-btn' onclick="location.href='#/enemies';">Enemies</div>
+      </div>
+    </content>
+    <content id="primary" data-ng-controller="FriendController" data-ng-init="getAll()">
+      <ul>
+        <friend-display id="primary" data-ng-repeat="person in friends" data-person="person">
+
+
+          <!-- App defined here! -->
+        </friend-display>
+      </ul>
+    </content>
     <content id="tertiary" ng-include="'templates/post.html'" class="container">
       <h3>Add Enemy</h3>
     </content>
+
+
+
     <footer id="footer" ng-include="'templates/footer.html'">
+      <div class='footer-body'>
+        Created by Joshua Ho - 2/15/2016 <br />
+        Javascript Assignment 3 Week 6
+      </div>
       <script type="text/javascript" src="bundle.js"></script>
     </footer>
-      </main>
+  </main>
 </html>

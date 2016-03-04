@@ -23,9 +23,14 @@ gulp.task('css:dev' , () => {
 
 gulp.task('watch' , () => {
   gulp.watch(__dirname + '/app/js/*.js' , ['webpack:dev']);
+  gulp.watch(__dirname + '/app/js/**/*.js' , ['webpack:dev']);
+  gulp.watch(__dirname + '/app/js/**/**/*.js' , ['webpack:dev']);
+
   gulp.watch(__dirname + '/app/css/**/*.css' , ['css:dev']);
+
   gulp.watch(__dirname + '/app/*.html' , ['html:dev']);
   gulp.watch(__dirname + '/app/templates/*.html' , ['html:dev']);
+  gulp.watch(__dirname + '/app/templates/**/**/*.html' , ['html:dev']);
 })
 
 gulp.task('build:dev', ['webpack:dev', 'html:dev' , 'css:dev']);
