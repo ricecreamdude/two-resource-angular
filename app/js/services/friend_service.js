@@ -20,8 +20,6 @@ module.exports = exports = function(app) {
       this.name = resourceName;
     };
 
-    var data = [];
-
     Resource.prototype.getAll = function(callback) {
       $http.get('http://localhost:5000/api' + this.name)
         .then( handleSuccess(callback) , handleFailure(callback) );

@@ -26,7 +26,7 @@
     <content id="primary" data-ng-controller="FriendController" data-ng-init="getAll()">
       {{message}}
       <ul>
-        <friend-display id="primary" data-ng-repeat="person in friends track by $index">
+        <friend-display data-ng-repeat="person in data.friends track by $index">
           <button ng-click="delete(person , $index)" class="btn btn-danger glyphicon glyphicon-remove"></button>
           <button ng-click="put(person)" class="btn btn-basic glyphicon glyphicon-pencil"></button>
           <!-- App defined here! -->
