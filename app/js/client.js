@@ -5,10 +5,9 @@ var friendsApp = angular.module('friendsApp' , [] )
 
 require('./controllers')(friendsApp);
 require('./services')(friendsApp);
+
 require('./friend')(friendsApp);
-
-
-// require('./enemy')(friendsApp);
+require('./enemy')(friendsApp);
 
 
 //
