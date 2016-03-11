@@ -10,7 +10,6 @@ module.exports = function(app) {
       enemyService.getAll( function(err , res) {
         if (err) return console.log(err);
         $scope.data.enemies = res;
-
       });
     };
     $scope.post = function(person) {
